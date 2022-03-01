@@ -24,13 +24,18 @@
         });
     }
 
-    getValue().then(newValue => {
-        console.log(newValue);
-    }).catch(e => {
-        console.error(e);
-    }).finally(() => {
-        console.log('Execution Finished');
-    });
+    async function print() {
+        try {
+            console.log(await getValue());
+        }catch (e) {
+            console.error(e);
+        }finally {
+            console.log('Execution Finished');
+        }
+
+    }
+
+    print();
 </script>
 
 </body>
